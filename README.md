@@ -1,24 +1,5 @@
-# README
+VECINO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Vecino es una aplicación web que te permite comunicar con tus vecinos sobre todo tipo de temas.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
