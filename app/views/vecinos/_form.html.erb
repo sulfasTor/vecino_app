@@ -1,0 +1,31 @@
+<%= link_to "Regresar", vecinos_path %>
+
+<%= form_with model: @vecino, local: true  do |form| %>
+<% if @vecino.errors.any? %>
+<div id="error_explanation">
+  <ul>
+	<% @vecino.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+  </ul>
+</div>
+<% end %>
+
+<p>
+  <%= form.label "Nombre Completo" %><br>
+  <%= form.text_field :name %>
+</p>
+
+<p>
+  <%= form.label "Dirección" %><br>
+  <%= form.text_area :address %>
+</p>
+
+<p>
+  <%= form.label "No. Telefono" %><br>
+  <%= form.text_field :phone %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %>

@@ -1,0 +1,21 @@
+
+<h1>La colonia</h1>
+
+<table>
+  <tr>
+	<th>Nombre</th>
+  </tr>
+
+  <% @vecinos.order(:id).each do |v| %>
+  <tr>
+	<td><%= v.name %></td>
+	<td><%= link_to 'Show', vecino_path(v) %></td>
+	<td><%= link_to 'Edit', edit_vecino_path(v) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<div>
+  <%= link_to 'Agregar nuevo vecino', new_vecino_path %>
+</div>
+
