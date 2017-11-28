@@ -37,7 +37,13 @@ class VecinosController < ApplicationController
       render 'edit'
     end
   end
-  
+
+  def destroy
+    @vecino = Vecino.find(params[:id])
+    @vecino.destroy
+
+    redirect_to vecinos_path
+  end
   private
   def vecino_params
     params.require(:vecino).permit(:name, :address, :phone)

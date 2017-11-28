@@ -9,8 +9,11 @@
   <% @vecinos.order(:id).each do |v| %>
   <tr>
 	<td><%= v.name %></td>
-	<td><%= link_to 'Show', vecino_path(v) %></td>
-	<td><%= link_to 'Edit', edit_vecino_path(v) %></td>
+	<td><%= link_to 'Veer más', vecino_path(v) %></td>
+	<td><%= link_to 'Actualizar', edit_vecino_path(v) %></td>
+	<td><%= link_to 'Eliminar', vecino_path(v),
+			method: :delete,
+			              data: { confirm: "Esta seguro que quiere borrar a #{v.name.split()[0]} de su lista?" } %></td>
   </tr>
   <% end %>
 </table>
