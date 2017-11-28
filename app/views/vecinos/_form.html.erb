@@ -1,31 +1,33 @@
-<%= link_to "Regresar", vecinos_path %>
+<div class="container"><%= link_to "Regresar", vecinos_path, class: "btn btn-primary glyphicon glyphicon-chevron-left" %></div>
+<br>
+<div class="container" class="form-group">
+  <%= form_with model: @vecino, local: true  do |form| %>
+  <% if @vecino.errors.any? %>
+  <div class="text-danger" id="error_explanation">
+	<ul class="list-group">
+	  <% @vecino.errors.full_messages.each do |msg| %>
+	  <li><%= msg %></li>
+	  <% end %>
+	</ul>
+  </div>
+  <% end %>
 
-<%= form_with model: @vecino, local: true  do |form| %>
-<% if @vecino.errors.any? %>
-<div id="error_explanation">
-  <ul>
-	<% @vecino.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
-	<% end %>
-  </ul>
+  <p>
+	<%= form.label "Nombre Completo" %><br>
+	<%= form.text_field :name, class: "form-control" %>
+  </p>
+
+  <p>
+	<%= form.label "Dirección" %><br>
+	<%= form.text_area :address, class: "form-control"%>
+  </p>
+
+  <p>
+	<%= form.label "Telefono de casa" %><br>
+	<%= form.text_field :phone, class: "form-control"%>
+  </p>
+  <p>
+	<%= form.submit class: "btn btn-primary"%>
+  </p>
+  <% end %>
 </div>
-<% end %>
-
-<p>
-  <%= form.label "Nombre Completo" %><br>
-  <%= form.text_field :name %>
-</p>
-
-<p>
-  <%= form.label "Dirección" %><br>
-  <%= form.text_area :address %>
-</p>
-
-<p>
-  <%= form.label "No. Telefono" %><br>
-  <%= form.text_field :phone %>
-</p>
-<p>
-  <%= form.submit %>
-</p>
-<% end %>
