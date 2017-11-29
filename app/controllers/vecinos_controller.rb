@@ -8,6 +8,7 @@ class VecinosController < ApplicationController
   
   def show
     @vecino = Vecino.find(params[:id])
+    @map = 	"https://www.google.com/maps/embed/v1/place?key=AIzaSyDmYN3xQvXMDAjZapUHgLcjAIu69lC1QJ8&q=#{@vecino.house_number}+Calle+#{@vecino.street}+#{@vecino.zip_code}"
   end
   
   def new
@@ -46,6 +47,6 @@ class VecinosController < ApplicationController
   end
   private
   def vecino_params
-    params.require(:vecino).permit(:name, :address, :phone)
+    params.require(:vecino).permit(:name, :phone, :house_number, :street, :zip_code)
   end
 end

@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 20171128020155) do
 
   create_table "vecinos", force: :cascade do |t|
     t.string "name"
-    t.text "address"
     t.string "phone"
+    t.string "street"
+    t.integer "house_number"
+    t.integer "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
