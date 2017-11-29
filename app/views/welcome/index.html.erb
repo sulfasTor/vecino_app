@@ -1,6 +1,21 @@
-<h1>VECINO</h1>
-<div>
-  <p> Vecino es una aplicación web que te permite comunicar con tus vecinos sobre todo tipo de temas. </p>
-</div>
-
-<%= link_to 'Ver La Colonia', controller: 'vecinos' %>
+<style type="text/css">
+  body {
+  background-image: url('/assets/fondo.png');
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+</style>
+<body>
+  <div class="container">
+	<h1 class="display-1">VECINO</h1>
+	<br>
+	<div class="jumbotron">
+	  <p> Vecino es una aplicación web que te permite comunicar con tus vecinos sobre todo tipo de temas. </p>
+	</div>
+	<br>
+	<div class = "btn btn-success">
+	  <%= link_to 'Ver la colonia', controller: 'vecinos' %>
+	</div>
+  </div>
+</body>
