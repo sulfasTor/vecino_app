@@ -8,17 +8,25 @@
 </style>
 <body>
   <div class="container">
-	<h1 class="display-1">VECINO</h1>
+	<h1 class="text-left"><strong>VECINO</strong></h1>
 	<br>
 	<div class="jumbotron">
-	  <p> Vecino es una aplicación web que te permite comunicar con tus vecinos sobre todo tipo de temas. </p>
+	  <p> Vecino es una aplicación web que te permite crear una red de vecinos comunicados en tu colonia. </p>
 	</div>
+	<div class="nav" style="width:11%;">
+	  <% if user_signed_in? %>
+	  <li class="nav-item">
+		<%= link_to('Desconectarse', destroy_user_session_path, method: :delete) %>
+		<% else %>
+	  <li class="nav-item">
+		<%= link_to('Iniciar sesion', new_user_session_path) %>
+	  <li class="nav-item">
+		<%= link_to('Crear cuenta', new_user_registration_path)  %>
+		<% end %>
+	  <li class="nav-item">
+		<%= link_to 'Ver la colonia', controller: 'vecinos' %>
+	</div>
+
 	<br>
-	<% if user_signed_in? %>
-	<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-	<% else %>
-	<%= link_to('Login', new_user_session_path)  %>
-	<% end %></br>
-	<%= link_to 'Ver la colonia', controller: 'vecinos' %>
   </div>
 </body>

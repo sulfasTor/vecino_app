@@ -65,9 +65,13 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.4.0)
       devise (>= 3.1)
+    dotenv (0.7.0)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    foreman (0.64.0)
+      dotenv (~> 0.7.0)
+      thor (>= 0.13.6)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.1)
@@ -184,6 +188,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-i18n
+  foreman
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
