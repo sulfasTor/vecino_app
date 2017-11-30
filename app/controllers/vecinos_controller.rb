@@ -4,7 +4,7 @@ class VecinosController < ApplicationController
   #index show new edit update destroy
 
   def index
-    @vecinos = Vecino.all
+    @vecinos = current_user.vecinos
   end
   
   def show
@@ -21,7 +21,7 @@ class VecinosController < ApplicationController
   end
 
   def create
-    @vecino = Vecino.new(vecino_params)
+    @vecino = current_user.vecinos.create(vecino_params)
     
     if @vecino.save
       redirect_to @vecino

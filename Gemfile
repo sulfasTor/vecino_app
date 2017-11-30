@@ -7,6 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.3.3'
 gem 'rails', '~> 5.1.1'
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server

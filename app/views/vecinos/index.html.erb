@@ -12,7 +12,7 @@
 		<th>Nombre</th>
 	  </tr>
 
-	<% @vecinos.order(:id).each do |v| %>
+	<% @vecinos.each do |v| %>
 	<tr>
 	  <td style="width:140px; text-align: center">
 		<%= link_to  '' ,vecino_path(v), class: "btn btn-sm btn-default glyphicon glyphicon-eye-open text-primary" %>
