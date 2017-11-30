@@ -2,10 +2,14 @@
 
 one:
   name: MyString
-  address: MyText
+  street: MyString
+  house_number: 1
   phone: MyString
+  zip_code: 1
 
 two:
   name: MyString
-  address: MyText
+  street: MyString
+  house_number: 1
   phone: MyString
+  zip_code: 1

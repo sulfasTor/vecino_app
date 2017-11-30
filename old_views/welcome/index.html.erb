@@ -14,11 +14,6 @@
 	  <p> Vecino es una aplicación web que te permite comunicar con tus vecinos sobre todo tipo de temas. </p>
 	</div>
 	<br>
-	<% if user_signed_in? %>
-	<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-	<% else %>
-	<%= link_to('Login', new_user_session_path)  %>
-	<% end %></br>
 	<%= link_to 'Ver la colonia', controller: 'vecinos' %>
   </div>
 </body>

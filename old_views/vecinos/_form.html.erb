@@ -1,0 +1,33 @@
+<div class="container"><%= link_to "Regresar", vecinos_path, class: "btn btn-primary glyphicon glyphicon-chevron-left" %></div>
+<br>
+<div class="container ">
+  <%= form_with model: @vecino, class: "form-inline", local: true  do |form| %>
+  <% if @vecino.errors.any? %>
+  <div class="text-danger" id="error_explanation" class: "form-inline">
+	<ul class="list-group">
+	  <% @vecino.errors.full_messages.each do |msg| %>
+	  <li><%= msg %></li>
+	  <% end %>
+	</ul>
+  </div>
+  <% end %>
+
+  <p>
+	<%= form.label "Nombre Completo" %>
+	<%= form.text_field :name, class: "form-control", style: "width:210px;", placeholder: "Pepito Perez" %>
+	<%= form.label :phone, "Telefono de casa" %>
+	<%= form.text_field :phone, class: "form-control", style: "width:110px;", placeholder: "0123456789"%>
+  </p>
+  <p>
+  	<%= form.label "Numero"%>
+  	<%= form.number_field :house_number, class: "form-control", style: "width:60px;", placeholder: "111"%>
+  	<%= form.label "Calle" %>
+  	<%= form.text_field :street, class: "form-control", style: "width:400px;", placeholder: "Calle 23"%>
+  	<%= form.label "Codigo postal"%>
+  	<%= form.number_field :zip_code, class: "form-control", style: "width:80px;", placeholder: "07865"%>
+  </p><br><br>
+	<%= form.submit class: "btn btn-primary"%>
+	<% end %>
+</div>
+
+

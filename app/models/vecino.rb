@@ -1,5 +1,5 @@
-# coding: utf-8
 class Vecino < ApplicationRecord
+  belongs_to :user
   validates_presence_of :name
   validates_presence_of :street
   validates_presence_of :house_number
