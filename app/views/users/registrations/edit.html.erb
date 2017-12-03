@@ -1,9 +1,14 @@
 <div class="container">
-  <h2><%= t('.title', resource: resource_class.model_name.human) %></h2>
+  <h2><%= t('.Modificar', resource: resource_class.model_name.human) %></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put}) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class="field">
+    <%= f.label :name %><br />
+	<%= f.text_field :name %>
+  </div>
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
@@ -22,7 +27,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off"%>
   </div>
 
   <div class="field">
@@ -40,11 +45,9 @@
 
   <h3><%= t('.cancel_my_account') %></h3>
 
-  <p><%= t('.unhappy') %> <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %>.</p>
+  <p><%= t('.Ya no me gusta') %> <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: "Esta seguro que quiere borrar su cuenta? Perderá todos sus contactos." }, method: :delete %>.</p>
 
-  <%= link_to t('devise.shared.links.back'), :back %>
-
-	<script>
+  <script>
 	var mySource = <%=raw @colonias%>
 	
 $(function() {

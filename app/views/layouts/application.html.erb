@@ -12,10 +12,11 @@
   </head>
   <div>
 	<%= link_to '', root_path, class: "btn btn-primary glyphicon glyphicon-home" %>
-	<span>
+	<span class="text-info">
 	  <% if user_signed_in? %>
-	  <% "Usuario: #{current_user.name}" %>
-	  <% end %>
+	  <strong>Usuario: </strong><%= current_user.name.split[0].capitalize%>
+	  <%= link_to '', edit_user_registration_path, class: "glyphicon glyphicon-cog"%>
+	  <% end  %>
 	</span>
   </div>
   <body>

@@ -1,7 +1,7 @@
 <div class="container"><%= link_to "Regresar", vecinos_path, class: "btn btn-primary glyphicon glyphicon-chevron-left" %></div>
 <br>
 <div class="container ">
-  <%= form_with model: @vecino, class: "form-inline", local: true  do |form| %>
+  <%= form_with model: @vecino, local: true  do |form| %>
   <% if @vecino.errors.any? %>
   <div class="text-danger" id="error_explanation" class: "form-inline">
 	<ul class="list-group">
