@@ -5,20 +5,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource/
    def new
-     super do |resource|
        @colonias = get_colonias
-     end
+       super
    end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+   def edit
+     @colonias = get_colonias
+     super
+   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+   def update
+     super do
+       @colonias = get_colonias
+     end
+   end
 
   # DELETE /resource
   # def destroy

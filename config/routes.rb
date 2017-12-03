@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :vecinos
   get 'welcome/index'
-  devise_for :user, controllers: { registrations: 'users/registrations'}
+  devise_for :users, controllers: { registrations: 'users/registrations'}
 
   get '/users' => 'vecinos#index', as: :user_root
   
