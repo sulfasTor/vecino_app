@@ -13,9 +13,9 @@
   <div>
 	<%= link_to '', root_path, class: "btn btn-primary glyphicon glyphicon-home" %>
 	<span>
-	  <!-- <% if user_signed_in? %> -->
-	  <!-- <% "Usuario: #{current_user.name.split[0]}" %> -->
-	  <!-- <% end %> -->
+	  <% if user_signed_in? %>
+	  <% "Usuario: #{current_user.name.split[0]}" %>
+	  <% end %>
 	</span>
   </div>
   <body>
