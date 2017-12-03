@@ -5,20 +5,20 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Nombre completo" %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Email" %><br />
     <%= f.email_field :email %>
   </div>
   
   <div class="field">
-	<%= f.label "Codigo Postal" %><br />
-	<%= f.text_field :zip_code %>
+    <%= f.label :colonia %><br />
+	<%= f.text_field :colonia, class: "autocomplete" %>
   </div>
-	
+  
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
@@ -36,3 +36,19 @@
 
   <%= render "devise/shared/links" %>
 </div>
+
+<script>
+  var mySource = <%=raw @colonias%>
+
+$(function() {
+	$("input.autocomplete").autocomplete({
+		minLength: 1,
+		source: function(request, response) {
+			var results = $.ui.autocomplete.filter(mySource, request.term);
+			response(results.slice(0, 10));
+		}
+	});
+});
+
+</script>
+	

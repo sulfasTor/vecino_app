@@ -1,5 +1,5 @@
 <div class="container"><%= link_to "Regresar", root_path, class: "btn btn-primary glyphicon glyphicon-chevron-left" %></div>
-<h1 class="container">La colonia</h1>
+<h1 class="container"><%= "Colonia #{current_user.colonia}" || "La colonia"%></h1>
 <br>
 <div class="container" style="text-align:left;">
 	<%= link_to ' Agregar', new_vecino_path, class: "btn btn-sm btn-default glyphicon glyphicon-plus" %>
