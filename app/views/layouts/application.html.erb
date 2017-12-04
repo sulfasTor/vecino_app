@@ -14,6 +14,7 @@
 	<%= link_to '', root_path, class: "btn btn-primary glyphicon glyphicon-home" %>
 	<span class="text-info">
 	  <% if user_signed_in? %>
+	  <%= link_to '', destroy_user_session_path, method: :delete, data: { confirm: "Esta seguro que quiere cerrar sesion?" }, class: "btn btn-primary glyphicon glyphicon-off" %>
 	  <strong>Usuario: </strong><%= current_user.name.split[0].capitalize%>
 	  <%= link_to '', edit_user_registration_path, class: "glyphicon glyphicon-cog"%>
 	  <% end  %>
@@ -26,4 +27,25 @@
 	</div>
     <%= yield %>
   </body>
+  <script>
+	window.fbAsyncInit = function() {
+	FB.init({
+	appId      : '{your-app-id}',
+	cookie     : true,
+	xfbml      : true,
+	version    : '{latest-api-version}'
+	});
+
+	FB.AppEvents.logPageView();
+
+	};
+
+	(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "https://connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+  </script>
 </html>

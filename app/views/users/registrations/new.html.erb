@@ -40,20 +40,20 @@
 <script>
   var mySource = <%=raw @colonias%>
   
-$(function() {
-	$("input.autocomplete").autocomplete({
-		minLength: 1,
-		source: function(request, response) {
-			var results = $.ui.autocomplete.filter(mySource, request.term);
-			response(results.slice(0, 6));
-		},
-		change: function (event, ui) {
-			if (ui.item == null || ui.item == undefined) {
-				$("input.autocomplete").val("");
-			} 
-		}
-	});
-});
+  $(function() {
+  $("input.autocomplete").autocomplete({
+  minLength: 1,
+  source: function(request, response) {
+  var results = $.ui.autocomplete.filter(mySource, request.term);
+  response(results.slice(0, 6));
+  },
+  change: function (event, ui) {
+  if (ui.item == null || ui.item == undefined) {
+  $("input.autocomplete").val("");
+  } 
+  }
+  });
+  });
 
 </script>
-	
+
